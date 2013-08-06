@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+	<%= image_tag @cookie.photo.url(:large) %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @cookie.name %>
+</p>
+
+<p>
+  <b>Baker:</b>
+  <%= @cookie.baker %>
+</p>
+
+
+<%= link_to 'Edit', edit_cookie_path(@cookie) %> |
+<%= link_to 'Back', cookies_path %>

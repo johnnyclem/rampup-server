@@ -1,0 +1,29 @@
+<%= form_for @cookie, :url => cookies_path, :html => { :multipart => true } do |f| %>
+  <% if @cookie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cookie.errors.count, "error") %> prohibited this cookie from being saved:</h2>
+
+      <ul>
+      <% @cookie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :baker %><br />
+    <%= f.text_field :baker %>
+  </div>
+	<div class="field">
+		<%= f.label :photo %><br />
+		<%= f.file_field :photo %>
+	</div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

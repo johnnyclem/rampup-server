@@ -1,0 +1,27 @@
+<h1>Listing cookies</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Baker</th>
+		<th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cookies.each do |cookie| %>
+  <tr>
+    <td><%= cookie.name %></td>
+    <td><%= cookie.baker %></td>
+		<td><%= image_tag cookie.photo.url(:thumb) %></td>
+    <td><%= link_to 'Show', cookie %></td>
+    <td><%= link_to 'Edit', edit_cookie_path(cookie) %></td>
+    <td><%= link_to 'Destroy', cookie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cookie', new_cookie_path %>
